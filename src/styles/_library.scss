@@ -8,6 +8,10 @@
   background-color: #fff;
   overflow-y: scroll;
   color: #000000a6;
+  transform: translate(-100%);
+  opacity: 0;
+  transition: 300ms ease;
+  transition-property: transform, opacity;
   h1 {
     padding: 2rem 3rem;
   }
@@ -34,7 +38,11 @@
 }
 .selected-song {
   background-color: rgba(77, 160, 255, 0.329);
-    &:hover {
+  &:hover {
     background-color: rgba(77, 160, 255, 0.329);
   }
+}
+.active-library {
+  transform: translate(0);
+  opacity: 1;
 }

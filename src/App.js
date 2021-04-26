@@ -18,6 +18,7 @@ const App = () => {
       song.active = false;
     }
   });
+  const [libraryStatus, setLibraryStatus] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const audio = audioRef.current;
@@ -34,7 +35,10 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <NavBar />
+        <NavBar
+          libraryStatus={libraryStatus}
+          setLibraryStatus={setLibraryStatus}
+        />
         <Song currentSong={currentSong} />
         <Player
           isPlaying={isPlaying}
@@ -49,6 +53,7 @@ const App = () => {
           setCurrentSong={setCurrentSong}
           audio={audio}
           isPlaying={isPlaying}
+          libraryStatus={libraryStatus}
         />
       </div>
       <audio
