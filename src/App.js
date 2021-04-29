@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./styles/App.scss";
+import "./styles/main.css"
 import Player from "./components/Player";
 import Song from "./components/Song";
 import data from "./MusicDB";
@@ -34,7 +35,7 @@ const App = () => {
 
   return (
     <>
-      <div className="App">
+      <div className="App text-gray-600">
         <NavBar
           libraryStatus={libraryStatus}
           setLibraryStatus={setLibraryStatus}
@@ -55,13 +56,13 @@ const App = () => {
           isPlaying={isPlaying}
           libraryStatus={libraryStatus}
         />
-      </div>
       <audio
         onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
       ></audio>
+      </div>
     </>
   );
 };
